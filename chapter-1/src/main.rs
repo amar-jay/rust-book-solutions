@@ -106,11 +106,29 @@ fn question_two(text: String) {
 }
 
 fn question_three(){
+    let mut stack = HashMap::new();  
+    let data = vec![
+        ("Taifun", "Enginneering"),
+        ("Sally", "Enginneering"),
+        ("Manan", "Coding"),
+        ("Jay", "Enginneering"),
 
+        ("Fisher", "Sales"),
+        ("Amir", "Sales"),
+    ];
+        for each in &data {
+            let pt = stack.entry(String::from(each.1)).or_insert(vec![]);
+            pt.push(each.0);
+        }
+            // TODO: try to append to value without replacing the entire vec. 
+            for (_,arr) in stack.iter_mut() {
+                    arr.sort();
+            }
+            println!("data is {:#?}", stack);
 }
 fn main(){
     let str1 =  String::from("First");
     question_one();
-    question_two(str2);
-    question_threre();
+    question_two(str1);
+    question_three();
 }
