@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 
 /**
+ *
  * Find the mean, mode and median of a given list of intergers 
  * */ 
 fn question_one() {
